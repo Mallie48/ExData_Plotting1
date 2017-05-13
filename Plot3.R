@@ -1,5 +1,6 @@
 
-## 
+## The household_power_consumption is saved in dataFile and read by read.table command, then the time frame is defined by data command:
+## More details are descibed in plot1.R.
 
 dataFile <- "./data/household_power_consumption.txt"
 data <- read.table(dataFile, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
@@ -18,6 +19,8 @@ subMetering3 <- as.numeric(subSetData$Sub_metering_3)
 
 ## With png command plot3 is created with corresponding pixel sizes, legends, lables, colors, line type and line width:
 png("plot3.png", width=480, height=480)
+
+## Applying plot, lines, and legends the whole plot3 is created. 
 plot(datetime, subMetering1, type="l", ylab="Energy Submetering", xlab="")
 lines(datetime, subMetering2, type="l", col="red")
 lines(datetime, subMetering3, type="l", col="blue")
